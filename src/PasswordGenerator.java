@@ -17,29 +17,19 @@ public class PasswordGenerator {
         String colore = input.nextLine();
         
         System.out.println("Inserisci il tuo giorno di nascita e premi invio...");
-        String giorno = input.nextLine();
+        int giorno = Integer.parseInt(input.nextLine());
 
         System.out.println("Inserisci il tuo mese di nascita e premi invio...");
-        String mese = input.nextLine();
+        int mese = Integer.parseInt(input.nextLine());
         
         System.out.println("Inserisci il tuo anno di nascita e premi invio...");
-        String anno = input.nextLine();
+        int anno = Integer.parseInt(input.nextLine());
 
         //Chiusura scanner
         input.close();
 
-        //Controllo della data di nascita
-        try {
-            int giornoInt = Integer.parseInt(giorno);
-            int meseInt = Integer.parseInt(mese);
-            int annoInt = Integer.parseInt(anno);
-        } catch (NumberFormatException e) {
-            System.out.println("Errore: giorno, mese e anno devono essere numeri.");
-            return;
-        }        
-
         //Generazione della password
-        String password = nome+cognome+colore+giorno+"-"+mese+"-"+anno;
+        String password = nome+"-"+cognome+"-"+colore+giorno+mese+anno;
 
         System.out.println("La password generata è:" + password);
 
